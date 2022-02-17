@@ -9,12 +9,19 @@
     </div>
     <div class="login-todo">
       <h2>Thank you Admin</h2>
+
+      <TodoList list-name="My to-dos" />
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+import TodoList from "@/components/Todolist.vue";
+
+export default {
+  name: "App",
+  components: { TodoList },
+};
 </script>
 
 <style>
