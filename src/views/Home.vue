@@ -3,6 +3,7 @@
     <Navbar />
     <Hero />
     <Posts />
+    <Loginform />
     <Footer />
   </div>
 </template>
@@ -14,6 +15,7 @@ import Navbar from "@/components/Navbar.vue";
 import Hero from "@/components/Hero.vue";
 import Posts from "@/components/Posts.vue";
 import Footer from "@/components/Footer.vue";
+import Loginform from "@/components/Loginform.vue";
 
 export default {
   name: "Home",
@@ -22,6 +24,7 @@ export default {
     Hero,
     Posts,
     Footer,
+    Loginform,
   },
 };
 
