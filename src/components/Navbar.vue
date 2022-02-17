@@ -4,7 +4,9 @@
     <div class="nav">
       <div class="container">
         <div class="logo vertical">
-          <img src="../assets/logo1.svg" alt="Logo" />
+          <a href="#">
+            <img src="../assets/logo1.svg" alt="Logo" />
+          </a>
         </div>
       </div>
     </div>
@@ -32,5 +34,9 @@ export default {};
 }
 .logo {
   height: 6rem;
+}
+.logo a:hover img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(50%);
 }
 </style>

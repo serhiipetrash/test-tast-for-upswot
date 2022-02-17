@@ -11,19 +11,19 @@
 
         <ul class="post check-list">
           <li>
-            <span class="post-title"> Interactive Reporting</span> <br />
+            <p class="post-title">Interactive Reporting</p>
             In just a few clicks, you can connect your data from 1C, CRM
             (Bitrix24, AmoCRM, ZohoCRM), E-commerce (PROM.UA, Rozetka, ebay),
             Logistic (Nova Poshta), Google Analytics and many more systems that
             reflect different aspects of business activities.
           </li>
           <li>
-            <span class="post-title">Automated data updates</span> <br />
+            <p class="post-title">Automated data updates</p>
             The application automatically updates and structures the data in
             just 60 seconds, saving you time and money.
           </li>
           <li>
-            <span class="post-title">Data Security</span> <br />
+            <p class="post-title">Data Security</p>
             The Bank guarantees the safety of your personal data, ensuring their
             integrity and confidentiality.
           </li>
@@ -38,6 +38,9 @@ export default {};
 </script>
 
 <style>
+main {
+  padding: 2.5rem 0;
+}
 .post-wrapper {
   max-width: 60%;
 }
