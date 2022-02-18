@@ -1,10 +1,5 @@
 <template>
   <div>
-    <div>
-      <div>
-        <h1>{{ listName }}</h1>
-      </div>
-    </div>
     <div class="todo-create">
       <CreateTodo @on-new-todo="addTodo($event)" />
     </div>
@@ -29,9 +24,6 @@ import Todo from "./Todo.vue";
 import CreateTodo from "./CreateTodo.vue";
 
 export default {
-  props: {
-    listName: String,
-  },
   data() {
     return {
       todos: [

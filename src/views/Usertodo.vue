@@ -2,15 +2,15 @@
   <section>
     <div class="login-bg">
       <div class="login-logo">
-        <a href="#">
+        <router-link :to="{ name: 'Home' }">
           <img src="../assets/logo1.svg" alt="Logo" />
-        </a>
+        </router-link>
       </div>
     </div>
     <div class="login-todo">
-      <h2>Thank you Admin</h2>
+      <h2>Thank you {{ username }}</h2>
 
-      <TodoList list-name="My to-dos" />
+      <TodoList />
     </div>
   </section>
 </template>
@@ -19,6 +19,7 @@
 import TodoList from "@/components/Todolist.vue";
 
 export default {
+  props: ["username"],
   name: "App",
   components: { TodoList },
 };

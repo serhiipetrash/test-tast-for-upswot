@@ -1,13 +1,27 @@
 <template>
   <div class="login-form">
-    <form class="form">
+    <form class="form" @submit.prevent="hendleSubmit">
       <div>
         <label for="name">name</label>
-        <input type="text" required id="name" name="name" />
+        <input
+          type="text"
+          v-model="username"
+          required
+          id="name"
+          name="name"
+          :class="{ novalid: !validate }"
+        />
       </div>
       <div>
         <label for="password">password</label>
-        <input type="password" required id="password" name="password" />
+        <input
+          type="password"
+          v-model="password"
+          required
+          id="password"
+          name="password"
+          :class="{ novalid: !validate }"
+        />
       </div>
 
       <button type="summit">login</button>
@@ -19,7 +33,33 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      username: "Admin",
+      password: "1234",
+    };
+  },
+  computed: {
+    validate() {
+      let trueName = this.username === "Admin" ? true : false;
+      let truePass = this.password === "1234" ? true : false;
+
+      if (trueName && truePass) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+  methods: {
+    hendleSubmit() {
+      if (this.validate) {
+        this.$router.push("/usertodo/" + this.username);
+      }
+    },
+  },
+};
 </script>
 
 <style>
@@ -114,5 +154,8 @@ export default {};
 .forgot-password a:hover {
   color: #033b5e;
   text-decoration: none;
+}
+.novalid {
+  color: red;
 }
 </style>
