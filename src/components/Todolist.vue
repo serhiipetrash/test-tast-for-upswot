@@ -5,23 +5,21 @@
         <h1>{{ listName }}</h1>
       </div>
     </div>
-    <div>
+    <div class="todo-create">
       <CreateTodo @on-new-todo="addTodo($event)" />
     </div>
     <div>
-      <div>
-        <ul>
-          <Todo
-            v-for="(todo, index) in todos"
-            :key="index"
-            :description="todo.description"
-            :completed="todo.completed"
-            @on-toggle="toggleTodo(todo)"
-            @on-delete="deleteTodo(todo)"
-            @on-edit="editTodo(todo, $event)"
-          />
-        </ul>
-      </div>
+      <ul class="todo-list">
+        <Todo
+          v-for="(todo, index) in todos"
+          :key="index"
+          :description="todo.description"
+          :completed="todo.completed"
+          @on-toggle="toggleTodo(todo)"
+          @on-delete="deleteTodo(todo)"
+          @on-edit="editTodo(todo, $event)"
+        />
+      </ul>
     </div>
   </div>
 </template>
@@ -37,9 +35,9 @@ export default {
   data() {
     return {
       todos: [
-        { description: "Do the dishes", completed: false },
-        { description: "Take out the trash", completed: false },
-        { description: "Finish doing laundry", completed: false },
+        { description: "Скласти резюме", completed: false },
+        { description: "Створити портфоліо", completed: false },
+        { description: "Пройти співбесіду", completed: false },
       ],
     };
   },
@@ -61,4 +59,50 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+ul.todo-list {
+  list-style-type: none;
+  padding-inline-start: 0;
+  padding: 0 1rem;
+}
+.todo-list li {
+  border-bottom: 1px solid #333333;
+  padding: 1rem;
+}
+.todo-list button {
+  background: inherit;
+  border: none;
+}
+.todo-list form {
+  display: block;
+  width: 92%;
+  float: left;
+  margin-bottom: 0.5rem;
+}
+.todo-list form input {
+  width: 100%;
+  color: #333333;
+  background: transparent;
+}
+
+.todo-description {
+  width: 92%;
+  color: #333333;
+}
+.todo-create {
+  padding: 1rem;
+}
+.todo-create input {
+  width: 100%;
+  padding: 1rem;
+  /* background: transparent; */
+}
+.todo-edit span:hover {
+  color: green;
+  cursor: pointer;
+}
+.todo-delete span:hover {
+  color: red;
+  cursor: pointer;
+}
+</style>

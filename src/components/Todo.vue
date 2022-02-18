@@ -1,6 +1,7 @@
 <template>
   <li>
     <button
+      class="todo-description"
       :class="{ completed }"
       @click="$emit('on-toggle')"
       v-if="!isEditing"
@@ -15,11 +16,11 @@
         ref="newTodo"
       />
     </form>
-    <button @click="startEditing()">
-      <span>fa fa-edit</span>
+    <button class="todo-edit" @click="startEditing()">
+      <span class="fa fa-edit"></span>
     </button>
-    <button @click="$emit('on-delete')" class="btn btn-outline-danger border-0">
-      <span>fa fa-trash</span>
+    <button class="todo-delete" @click="$emit('on-delete')">
+      <span class="fa fa-trash"></span>
     </button>
   </li>
 </template>
