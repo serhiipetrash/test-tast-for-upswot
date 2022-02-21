@@ -9,6 +9,7 @@ npm install
 ```
 npm run serve
 ```
+### https://test-task-for-upswot.netlify.app/
 
 ### Compiles and minifies for production
 ```
